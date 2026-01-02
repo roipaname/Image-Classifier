@@ -21,7 +21,7 @@ def clasify_image(model,image):
     try:
         processed_img=preprocess_image(image)
         preds=model.predict(processed_img)
-        decoded_preds=decode_predictions(preds,top=3)[0]
+        decoded_preds=decode_predictions(preds,top=5)[0]
         return decoded_preds
     except Exception as e:
         st.error(f"Error in classification: {str(e)}")
